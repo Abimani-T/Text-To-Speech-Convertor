@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speak</title>
+    <link rel="stylesheet" href="uipro.css">
+</head>
+
+<body>
+    <div id="container">
+      <h1>Text to Speech</h1>
+      <textarea id="textTospeak" placeholder="Enter your text"></textarea>
+      <button onclick="speak()">Click to Speak</button>
+
+
+    </div>
+    <script>
+        var speech=new SpeechSynthesisUtterance();
+        
+        function speak(){
+             speech.text=document.getElementById("textTospeak").value;
+             speech.rate=3;
+             speech.volume=4;
+             speech.pitch=3;
+
+             window.speechSynthesis.speak(speech);
+        }
+    </script>
+    
+</body>
+</html>
